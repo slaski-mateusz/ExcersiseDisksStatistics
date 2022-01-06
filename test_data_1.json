@@ -1,0 +1,144 @@
+{
+	"total_disks": {
+		"total_disks": 20
+	},
+	"disks_per_datacenter": {
+		"dc-aaa": 2,
+		"dc-bbb": 4,
+		"dc-ccc": 6,
+		"dc-ddd": 8
+	},
+	"youngest_disk": [
+		{
+			"datacenter": "dc-aaa",
+			"hostname": "host-000101.dc-aaa.storage.ovh",
+			"disk_serial": "AAA1010001",
+			"disk_age_days": 100.0
+		}
+	],
+	"oldest_disk": [
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000404.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4040002",
+			"disk_age_days": 109.5
+		}
+	],
+	"average_age_per_dc": {
+		"dc-aaa": 100.25,
+		"dc-bbb": 101.75,
+		"dc-ccc": 104.25,
+		"dc-ddd": 107.75
+	},
+	"average_read_write": {
+		"avg_reads": 1000000105.0,
+		"avg_writes": 100001050.0
+	},
+	"most_loaded_5_disks": [
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000404.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4040002",
+			"total_reads": 1000000200,
+			"total_writes": 100002000,
+			"sum_read_write": 1100002200
+		},
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000404.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4040001",
+			"total_reads": 1000000190,
+			"total_writes": 100001900,
+			"sum_read_write": 1100002090
+		},
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000403.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4030002",
+			"total_reads": 1000000180,
+			"total_writes": 100001800,
+			"sum_read_write": 1100001980
+		},
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000403.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4030001",
+			"total_reads": 1000000170,
+			"total_writes": 100001700,
+			"sum_read_write": 1100001870
+		},
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000402.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4020002",
+			"total_reads": 1000000160,
+			"total_writes": 100001600,
+			"sum_read_write": 1100001760
+		}
+	],
+	"less_loaded_5_disks": [
+		{
+			"datacenter": "dc-aaa",
+			"hostname": "host-000101.dc-aaa.storage.ovh",
+			"disk_serial": "AAA1010001",
+			"total_reads": 1000000010,
+			"total_writes": 100000100,
+			"sum_read_write": 1100000110
+		},
+		{
+			"datacenter": "dc-aaa",
+			"hostname": "host-000101.dc-aaa.storage.ovh",
+			"disk_serial": "AAA1010002",
+			"total_reads": 1000000020,
+			"total_writes": 100000200,
+			"sum_read_write": 1100000220
+		},
+		{
+			"datacenter": "dc-bbb",
+			"hostname": "host-000201.dc-bbb.storage.ovh",
+			"disk_serial": "BBB2010001",
+			"total_reads": 1000000030,
+			"total_writes": 100000300,
+			"sum_read_write": 1100000330
+		},
+		{
+			"datacenter": "dc-bbb",
+			"hostname": "host-000201.dc-bbb.storage.ovh",
+			"disk_serial": "BBB2010002",
+			"total_reads": 1000000040,
+			"total_writes": 100000400,
+			"sum_read_write": 1100000440
+		},
+		{
+			"datacenter": "dc-bbb",
+			"hostname": "host-000202.dc-bbb.storage.ovh",
+			"disk_serial": "BBB2020001",
+			"total_reads": 1000000050,
+			"total_writes": 100000500,
+			"sum_read_write": 1100000550
+		}
+	],
+	"disks_with_errors": [
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000403.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4030002",
+			"tot_uncr_r_er": 1,
+			"tot_uncr_w_er": 0
+		},
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000404.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4040001",
+			"tot_uncr_r_er": 0,
+			"tot_uncr_w_er": 1
+		},
+		{
+			"datacenter": "dc-ddd",
+			"hostname": "host-000404.dc-ddd.storage.ovh",
+			"disk_serial": "DDD4040002",
+			"tot_uncr_r_er": 1,
+			"tot_uncr_w_er": 1
+		}
+	]
+}

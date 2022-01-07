@@ -7,7 +7,6 @@ import json
 
 pd.options.display.max_columns = None
 pd.options.display.max_colwidth = 0
-pd.options.display.float_format = '{:.2f}'.format
 
 input_columns = [
     'datacenter',
@@ -54,12 +53,14 @@ class DisksRanking:
         return json.dumps(
             {
                 'total_disks': len(self.disks_data.index)
-            }
+            },
+            indent=2
         )
 
     def disks_per_datacenter(self):
         return json.dumps(
-            self.disks_data.groupby('datacenter')['datacenter'].count().to_dict()
+            self.disks_data.groupby('datacenter')['datacenter'].count().to_dict(),
+            indent=2
         )
 
     def youngest_disk(self):
@@ -70,7 +71,8 @@ class DisksRanking:
             'disk_age_days'
         ]].to_dict('records')
         return json.dumps(
-            disk_data
+            disk_data,
+            indent=2
         )
 
     def oldest_disk(self):
@@ -81,19 +83,24 @@ class DisksRanking:
             'disk_age_days'
         ]].to_dict('records')
         return json.dumps(
-            disk_data
+            disk_data,
+            indent=2
         )
 
     def average_age_per_dc(self):
         avgs_dc = self.disks_data.groupby('datacenter')['disk_age_days'].mean().to_dict()
-        return json.dumps(avgs_dc)
+        return json.dumps(
+            avgs_dc,
+            indent=2
+        )
 
     def average_read_write(self):
         return json.dumps(
             {
                 'avg_reads': self.disks_data['total_reads'].mean(),
                 'avg_writes': self.disks_data['total_writes'].mean()
-            }
+            },
+            indent=2
         )
 
     def rank_read_write_io(self, top=None, disks_number=None):
@@ -112,7 +119,8 @@ class DisksRanking:
                 'total_reads',
                 'total_writes',
                 'sum_read_write'
-            ]].to_dict('records')
+            ]].to_dict('records'),
+            indent=2
         )
 
     def most_loaded_5_disks(self):
@@ -132,7 +140,7 @@ class DisksRanking:
                 'tot_uncr_r_er',
                 'tot_uncr_w_er'
             ]]
-        return json.dumps(dwe.to_dict('records'))
+        return json.dumps(dwe.to_dict('records'), indent=2)
 
 
 if __name__ == '__main__':
@@ -146,7 +154,7 @@ if __name__ == '__main__':
             print(disks_ranking.disks_per_datacenter())
             print('\nYoungest disk')
             print(disks_ranking.youngest_disk())
-            print('\noldest disk')
+            print('\nOldest disk')
             print(disks_ranking.oldest_disk())
             print('\nAverage age per data center')
             print(disks_ranking.average_age_per_dc())

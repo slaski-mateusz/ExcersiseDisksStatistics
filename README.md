@@ -16,7 +16,7 @@ Each entry of the data set consists of following fields separated by ";" charact
 * total uncorrected read errors
 * total uncorrected write errors
 
-## Requirments
+## Requirements
 The proper solution (a script in Python) should output following information:
 * How many disks are in total and in each DC
 * Which disk is the youngest/oldest one and what is its age (in days)
